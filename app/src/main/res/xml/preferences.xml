@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:iconSpaceReserved="false">
+
+    <!-- 설정 화면에 보여질 카테고리(주로 입력 필드의 그룹명을 표시하는 용도로 사용) 작성 -->
+
+    <!-- 기능 카테고리 -->
+    <PreferenceCategory
+        android:title="기능 설정"
+        app:iconSpaceReserved="false">
+        <!-- 입력 필드 구성 -->
+        <CheckBoxPreference
+            android:key="key_add_shortcut"
+            android:title="바로가기 아이콘"
+            android:icon="@mipmap/ic_launcher"
+            android:defaultValue="true"/>
+        <SwictchPreference
+            android:key="key_switch_on"
+            android:title="화면 켜짐"
+            android:icon="@mipmap/ic_launcher"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <!-- 기능 카테고리 -->
+    <PreferenceCategory
+        android:title="옵션 설정"
+        app:iconSpaceReserved="false">
+        <!-- 입력 필드 구성 -->
+        <EditTextPreference
+            android:key="key_edit_name"
+            android:title="이름"
+            android:summary="이름을 입력하세요."
+            android:dialogTitle="이름 입력"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:key="key_set_item"
+            android:title="목록 선택형"
+            android:summary="목록"
+            android:entries="@array/action_list"
+            android:entryValues="@array/action_values"
+            android:dialogTitle="목록 선택 제목"
+            app:iconSpaceReserved="false"/>
+        <PreferenceScreen
+            android:title="설정 화면 타이틀"
+            android:summary="설정 화면 요약"
+            app:iconSpaceReserved="false">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.android.com"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
